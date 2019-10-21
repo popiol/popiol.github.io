@@ -1,10 +1,10 @@
 $(function(){
-	d3.csv("data/line_vs_market.csv").then(
+	d3.csv("data/line_vs_market.csv?r="+Math.random()).then(
 		function(data) {
 			var chart = new ApexCharts(document.querySelector("#stocks_line_vs_market"), {
 				chart: {
 					type: 'line',
-					width: '90%',
+					width: '98%',
 					height: 400
 				},
 				series: [{
@@ -20,6 +20,99 @@ $(function(){
 				}
 			});
 			chart.render();
+		}
+	);
+
+	d3.csv("data/best.csv?r="+Math.random()).then(
+		function(data) {
+			var chart = new ApexCharts(document.querySelector("#stocks_best"), {
+				chart: {
+					type: 'bar',
+					width: '98%',
+					height: 400,
+				},
+				plotOptions: {
+					bar: {
+						horizontal: true,
+						barHeight: '80%'
+					}
+				},
+				series: [{
+					name: 'Best transactions',
+					data: data.map(x => x.profit)
+				}],
+				xaxis: {
+					categories: data.map(x => x.comp_name.replace('&amp;','&'))
+				},
+				yaxis: {
+					opposite: true
+				}
+			});
+			chart.render();
+		}
+	);
+
+	d3.csv("data/worst.csv?r="+Math.random()).then(
+		function(data) {
+			var chart = new ApexCharts(document.querySelector("#stocks_worst"), {
+				chart: {
+					type: 'bar',
+					width: '98%',
+					height: 400,
+				},
+				colors: ['#FF4560'],
+				plotOptions: {
+					bar: {
+						horizontal: true,
+						barHeight: '80%'
+					}
+				},
+				series: [{
+					name: 'Worst transactions',
+					data: data.map(x => x.profit)
+				}],
+				xaxis: {
+					categories: data.map(x => x.comp_name.replace('&amp;','&'))
+				}
+			});
+			chart.render();
+
+		}
+	);
+
+	d3.csv("data/success.csv?r="+Math.random()).then(
+		function(data) {
+			var chart = new ApexCharts(document.querySelector("#stocks_success"), {
+				chart: {
+					type: 'bar',
+					width: '98%',
+					height: 400,
+				},
+				colors: ['#FF4560','#008FFB'],
+				plotOptions: {
+					bar: {
+						horizontal: false,
+						columnWidth: '75%',
+					},
+				},
+				stroke: {
+					show: true,
+					width: 50,
+					colors: ['transparent']
+				},
+				series: [{
+					name: 'Failure',
+					data: [data[0].n]
+				},{
+					name: 'Success',
+					data: [data[1].n]
+				}],
+				xaxis: {
+					categories: data.map(x => x.successful)
+				}
+			});
+			chart.render();
+
 		}
 	);
 });

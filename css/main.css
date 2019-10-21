@@ -1,3 +1,48 @@
 body {
 	font-family: Calibri;
 }
+
+h1 {
+	background-color: navy;
+	color: white;
+	padding: 10px;
+	padding-left: 20px;
+	margin: 0;
+}
+
+h2 {
+	font-size: 30px;
+	color: #FF4560; 
+}
+
+#stocks_line_vs_market {
+	margin: auto;
+	width: 100%;
+	padding: 0;
+}
+
+#stocks_info {
+	text-align: center;
+}
+
+.box {
+	text-align: center;
+	width: 25%;
+	min-width: 200px;
+	padding: 20px;
+	margin: 20px;
+	background-color: #e9f6f9;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.box h3 {
+	margin-top: 0px;
+}
+
+#stocks_best, #stocks_worst, #stocks_success {
+	width: 30%;
+	min-width: 400px;
+	display: inline-block;
+}
+
