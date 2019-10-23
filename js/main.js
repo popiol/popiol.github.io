@@ -46,6 +46,9 @@ $(function(){
 				},
 				yaxis: {
 					opposite: true
+				},
+				dataLabels: {
+					formatter: x => '+'+x+'%'
 				}
 			});
 			chart.render();
@@ -64,7 +67,7 @@ $(function(){
 				plotOptions: {
 					bar: {
 						horizontal: true,
-						barHeight: '80%'
+						barHeight: '80%'	
 					}
 				},
 				series: [{
@@ -73,7 +76,11 @@ $(function(){
 				}],
 				xaxis: {
 					categories: data.map(x => x.comp_name.replace('&amp;','&'))
+				},
+				dataLabels: {
+					formatter: x => x+'%'
 				}
+				
 			});
 			chart.render();
 
@@ -101,10 +108,10 @@ $(function(){
 					colors: ['transparent']
 				},
 				series: [{
-					name: 'Failure',
+					name: '# bad trans',
 					data: [data[0].n]
 				},{
-					name: 'Success',
+					name: '# good trans',
 					data: [data[1].n]
 				}],
 				xaxis: {
