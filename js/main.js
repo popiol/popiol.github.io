@@ -61,8 +61,19 @@ $(function(){
 		}
 	);
 
+	best_worst_scale = {x:1,y:1,xx:.7,yy:.3,done:0,rescale(){
+		if (best_worst_scale.done == 2) {
+			$('#stocks_best').width(function(){return $(this).width() * (best_worst_scale.xx + best_worst_scale.yy * best_worst_scale.x / best_worst_scale.y)});
+			$('#stocks_worst').width(function(){return $(this).width() * (best_worst_scale.xx + best_worst_scale.yy * best_worst_scale.y / best_worst_scale.x)});
+			best_worst_scale.best_chart.render();
+			best_worst_scale.worst_chart.render();
+		}
+	}};
+
 	d3.csv("data/best.csv?r="+Math.random()).then(
 		function(data) {
+			best_worst_scale.x = Math.abs(data[0].profit);
+			best_worst_scale.done++;
 			var chart = new ApexCharts(document.querySelector("#stocks_best"), {
 				chart: {
 					type: 'bar',
@@ -86,15 +97,22 @@ $(function(){
 					opposite: true
 				},
 				dataLabels: {
-					formatter: x => '+'+x+'%'
+					formatter: x => '+'+x+'%',
+					style: {
+						colors: ['black']
+					},
+					textAnchor: 'start'
 				}
 			});
-			chart.render();
+			best_worst_scale.best_chart = chart;
+			best_worst_scale.rescale();
 		}
 	);
 
 	d3.csv("data/worst.csv?r="+Math.random()).then(
 		function(data) {
+			best_worst_scale.y = Math.abs(data[0].profit);
+			best_worst_scale.done++;
 			var chart = new ApexCharts(document.querySelector("#stocks_worst"), {
 				chart: {
 					type: 'bar',
@@ -116,12 +134,15 @@ $(function(){
 					categories: data.map(x => x.comp_name.replace('&amp;','&'))
 				},
 				dataLabels: {
-					formatter: x => x+'%'
-				}
-				
+					formatter: x => x+'%',
+					style: {
+						colors: ['black']
+					},
+					textAnchor: 'middle'
+				}				
 			});
-			chart.render();
-
+			best_worst_scale.worst_chart = chart;
+			best_worst_scale.rescale();
 		}
 	);
 

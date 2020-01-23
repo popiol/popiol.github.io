@@ -15,7 +15,7 @@ h2 {
 	color: #FF4560; 
 }
 
-#stocks_line_vs_market {
+.stocks_line_vs_market {
 	margin: auto;
 	width: 100%;
 	padding: 0;
