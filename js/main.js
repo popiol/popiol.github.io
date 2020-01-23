@@ -15,7 +15,7 @@ $(function(){
 					data: data.map(x => x.market_val)	
 				}],
 				xaxis: {
-					type: 'datetime',
+					type: 'date',
 					categories: data.map(x => x.session_dt.split(' ')[0])
 				}
 			});
