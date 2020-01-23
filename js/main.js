@@ -25,6 +25,8 @@ $(function(){
 				}
 			});
 			chart.render();
+			$('#profit2019').text(Math.round(data[data.length-1].val));
+			$('#market2019').text(Math.round(data[data.length-1].market_val));
 		}
 	);
 
@@ -54,6 +56,8 @@ $(function(){
 				}
 			});
 			chart.render();
+			$('#profit2020').text(Math.round(data[data.length-1].val));
+			$('#market2020').text(Math.round(data[data.length-1].market_val));
 		}
 	);
 
