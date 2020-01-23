@@ -1,10 +1,10 @@
 $(function(){
-	d3.csv("data/line_vs_market.csv?r="+Math.random()).then(
+	d3.csv("data/line_vs_market_2019.csv?r="+Math.random()).then(
 		function(data) {
-			var chart = new ApexCharts(document.querySelector("#stocks_line_vs_market"), {
+			var chart = new ApexCharts(document.querySelector("#stocks_line_vs_market_2019"), {
 				chart: {
 					type: 'line',
-					width: '98%',
+					width: '99%',
 					height: 400
 				},
 				series: [{
@@ -15,8 +15,42 @@ $(function(){
 					data: data.map(x => x.market_val)	
 				}],
 				xaxis: {
-					type: 'date',
-					categories: data.map(x => x.session_dt.split(' ')[0])
+					type: 'datetime',
+					categories: data.map(x => x.session_dt.split(' ')[0]),
+					labels: {
+						datetimeFormatter: {
+							month: 'MMM'
+						}
+					}
+				}
+			});
+			chart.render();
+		}
+	);
+
+	d3.csv("data/line_vs_market.csv?r="+Math.random()).then(
+		function(data) {
+			var chart = new ApexCharts(document.querySelector("#stocks_line_vs_market"), {
+				chart: {
+					type: 'line',
+					width: '99%',
+					height: 400
+				},
+				series: [{
+					name: 'portfolio',
+					data: data.map(x => x.val)
+				}, {
+					name: 'market',
+					data: data.map(x => x.market_val)	
+				}],
+				xaxis: {
+					type: 'datetime',
+					categories: data.map(x => x.session_dt.split(' ')[0]),
+					labels: {
+						datetimeFormatter: {
+							month: 'MMM'
+						}
+					}
 				}
 			});
 			chart.render();
