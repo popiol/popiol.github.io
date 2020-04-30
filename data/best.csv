@@ -1,4 +1,5 @@
 comp_code,comp_name,profit
+NAS:SKT,"Tanger Factory Outlet Centers Inc.",45.15
 NAS:PCG,"PG&amp;E Corporation",43.97
 NAS:MNK,"Mallinckrodt PLC",31.69
 NAS:FTNT,"Fortinet Inc",19.75
@@ -8,4 +9,3 @@ NAS:PCG,"PG&amp;E Corporation",10.35
 NAS:TRMK,"Trustmark Corp",7.37
 NAS:CCL,"Carnival Corp",6.31
 WSE:PCM,"Prime Car Management SA",5.29
-WSE:MDG,"Medicalgorithmics SA",2.60
