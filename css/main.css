@@ -3,16 +3,18 @@ body {
 }
 
 h1 {
-	background-color: navy;
+	background-color: #292961;
 	color: white;
 	padding: 10px;
 	padding-left: 20px;
 	margin: 0;
+	font-size: 20px;
+	font-weight: normal;
 }
 
 h2 {
 	font-size: 30px;
-	color: #FF4560; 
+	color: #444444;
 }
 
 .stocks_line_vs_market {
