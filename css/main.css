@@ -44,7 +44,7 @@ h2 {
 
 #stocks_best, #stocks_worst, #stocks_success {
 	width: 30%;
-	min-width: 400px;
+	min-width: 380px;
 	display: inline-block;
 }
 
