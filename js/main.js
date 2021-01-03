@@ -30,9 +30,9 @@ $(function(){
 		}
 	);
 
-	d3.csv("data/line_vs_market.csv?r="+Math.random()).then(
+	d3.csv("data/line_vs_market_2020.csv?r="+Math.random()).then(
 		function(data) {
-			var chart = new ApexCharts(document.querySelector("#stocks_line_vs_market"), {
+			var chart = new ApexCharts(document.querySelector("#stocks_line_vs_market_2020"), {
 				chart: {
 					type: 'line',
 					width: '99%',
