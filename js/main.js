@@ -25,7 +25,6 @@ function create_line_plot(id) {
 		});
 		chart.render();
 		year = id.replace('stocks_line_vs_market_','');
-		alert(year);
 		$('#profit'+year).text(Math.round(data[data.length-1].val));
 		$('#market'+year).text(Math.round(data[data.length-1].market_val));
 	}
@@ -35,6 +34,7 @@ function create_line_plot(id) {
 $(function(){
 	$('.stocks_line_vs_market').each(function(){
 		id = this.id;
+		alert(id);
 		filename = "data/"+id.replace('stocks_','')+'.csv';
 		d3.csv(filename+"?r="+Math.random()).then(create_line_plot(id))
 	});
