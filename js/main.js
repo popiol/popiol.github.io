@@ -34,7 +34,6 @@ function create_line_plot(id) {
 $(function(){
 	$('.stocks_line_vs_market').each(function(){
 		id = this.id;
-		alert(id);
 		filename = "data/"+id.replace('stocks_','')+'.csv';
 		d3.csv(filename+"?r="+Math.random()).then(create_line_plot(id))
 	});
