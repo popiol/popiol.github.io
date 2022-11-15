@@ -115,7 +115,7 @@ $(function(){
 					style: {
 						colors: ['black']
 					},
-					textAnchor: 'middle'
+					textAnchor: 'start'
 				}				
 			});
 			best_worst_scale.worst_chart = chart;
