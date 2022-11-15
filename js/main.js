@@ -68,13 +68,13 @@ $(function(){
 					data: data.map(x => x.profit)
 				}],
 				xaxis: {
-					categories: data.map(x => x.comp_name.replace('&amp;','&')),
+					categories: data.map(x => x.comp_name.replace('&amp;','&'))
+				},
+				yaxis: {
+					opposite: true,
 					labels: {
 						offsetX: 20
 					}
-				},
-				yaxis: {
-					opposite: true
 				},
 				dataLabels: {
 					formatter: x => '+'+x+'%',
