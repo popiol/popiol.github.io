@@ -71,7 +71,7 @@ $(function(){
 					categories: data.map(x => x.comp_name.replace('&amp;','&'))
 				},
 				yaxis: {
-					opposite: false
+					opposite: true
 				},
 				dataLabels: {
 					formatter: x => '+'+x+'%',
