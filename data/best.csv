@@ -1,11 +1,11 @@
 comp_code,comp_name,profit
-NAS:SKT,"Tanger Factory Outlet Centers Inc.",45.15
-NAS:PCG,"PG&amp;E Corporation",43.97
-NAS:RIG,"Transocean LTD",40.29
-NAS:MNK,"Mallinckrodt PLC",31.69
-NAS:MRO,"Marathon Oil Corporation",25.24
-NAS:CNK,"Cinemark Holdings, Inc.",22.71
-NAS:XPO,"XPO Logistics",22.20
-NAS:GNW,"Genworth Financial Inc",20.83
-WSE:MIL,"Bank Millennium SA",19.85
-NAS:FTNT,"Fortinet Inc",19.75
+NAS:SKT,"Tanger Factory Outlet Centers Inc., 2020",45.15
+NAS:PCG,"PG&amp;E Corporation, 2019",43.97
+NAS:RIG,"Transocean LTD, 2020",40.29
+NAS:MNK,"Mallinckrodt PLC, 2019",31.69
+NAS:MRO,"Marathon Oil Corporation, 2022",25.24
+NAS:CNK,"Cinemark Holdings, Inc., 2020",22.71
+NAS:XPO,"XPO Logistics, 2022",22.20
+NAS:GNW,"Genworth Financial Inc, 2021",20.83
+WSE:MIL,"Bank Millennium SA, 2022",19.85
+NAS:FTNT,"Fortinet Inc, 2019",19.75

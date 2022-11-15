@@ -1,11 +1,11 @@
 comp_code,comp_name,profit
-WSE:LWB,"Lubelski Wegiel Bogdanka SA",-29.96
-WSE:RFK,"Fabryka Kotlow Rafako SA",-24.55
-NAS:UNFI,"United Natural Foods Inc",-19.92
-NAS:NVDA,"NVIDIA Corporation",-18.50
-NAS:FB,"Facebook Inc",-17.44
-NAS:MUR,"Murphy Oil Corporation",-14.14
-WSE:SKH,"Skarbiec Holding SA",-13.30
-NAS:GPS,"Gap Inc",-12.64
-NAS:GPS,"Gap Inc",-9.54
-WSE:ALI,"Altus Towarzystwo Fundszy Inwstycyjnych",-9.35
+WSE:LWB,"Lubelski Wegiel Bogdanka SA, 2021",-29.96
+WSE:RFK,"Fabryka Kotlow Rafako SA, 2020",-24.55
+NAS:UNFI,"United Natural Foods Inc, 2019",-19.92
+NAS:NVDA,"NVIDIA Corporation, 2019",-18.50
+NAS:FB,"Facebook Inc, 2020",-17.44
+NAS:MUR,"Murphy Oil Corporation, 2020",-14.14
+WSE:SKH,"Skarbiec Holding SA, 2021",-13.30
+NAS:GPS,"Gap Inc, 2022",-12.64
+NAS:GPS,"Gap Inc, 2020",-9.54
+WSE:ALI,"Altus Towarzystwo Fundszy Inwstycyjnych, 2019",-9.35
