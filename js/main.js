@@ -32,6 +32,23 @@ function create_line_plot(id) {
 
 
 $(function(){
+	/*
+	d3.csv("data/etfs.csv?r="+Math.random()).then(
+		function(data) {
+			return;
+			table = $('#etfs table');
+			table.append($('<tr><td>BOT</td><td></td><td></td><td></td><td></td></tr>'));
+			for (rowi in data) {
+				if (rowi >= data.length-1) break;
+				row = $('<tr></tr>');
+				for (key in data[rowi]) {
+					row.prepend($('<td></td>').text(data[rowi][key]));
+				}
+				table.append(row);
+			}
+		}
+	);
+*/
 	$('.stocks_line_vs_market').each(function(){
 		id = this.id;
 		filename = "data/"+id.replace('stocks_','')+'.csv';
