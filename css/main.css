@@ -48,3 +48,33 @@ h2 {
 	display: inline-block;
 }
 
+.table {
+	margin: auto;
+	border-collapse: collapse;
+}
+
+.table thead {
+	font-weight: bold;
+}
+
+.table tr {
+	border-top: 1px solid gray;
+}
+
+.table thead tr {
+	border-top: 0;
+}
+
+.table tr td {
+	text-align: right;
+	padding: 5px;
+}
+
+.table tr td:first-child {
+	text-align: left;
+}
+
+.table tbody tr:first-child {
+	background-color: #fcf3cf;
+}
+

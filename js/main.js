@@ -24,31 +24,46 @@ function create_line_plot(id) {
 			}
 		});
 		chart.render();
-		year = id.replace('stocks_line_vs_market_','');
+		var year = id.replace('stocks_line_vs_market_','');
 		$('#profit'+year).text(Math.round(data[data.length-1].val));
+		setTimeout(function(){
+			$('#bot_'+year).text(Math.round(data[data.length-1].val * 100) / 100 + '%');
+		}, 10);
 		$('#market'+year).text(Math.round(data[data.length-1].market_val));
 	}
 }
 
 
 $(function(){
-	/*
 	d3.csv("data/etfs.csv?r="+Math.random()).then(
 		function(data) {
-			return;
-			table = $('#etfs table');
-			table.append($('<tr><td>BOT</td><td></td><td></td><td></td><td></td></tr>'));
+			table = $('<table class="table"></table>');
+			header = $('<tr></tr>');
+			for (key in data[0]) {
+				header.prepend($('<td></td>').text(key));
+			}
+			table.append($('<thead></thead>').append(header));
+			tbody = $('<tbody></tbody>');
+			row = $('<tr></tr>');
+			for (key in data[0]) {
+				row.prepend($('<td id="bot_'+key+'"></td>'));
+			}
+			row.find('#bot_Name').text("BOT");
+			tbody.append(row);
 			for (rowi in data) {
 				if (rowi >= data.length-1) break;
 				row = $('<tr></tr>');
 				for (key in data[rowi]) {
 					row.prepend($('<td></td>').text(data[rowi][key]));
 				}
-				table.append(row);
+				tbody.append(row);
 			}
+			w = $(window).width();
+			table.width(Math.min(w, 800));
+			$('#etfs').append(table.append(tbody));
 		}
 	);
-*/
+	
 	$('.stocks_line_vs_market').each(function(){
 		id = this.id;
 		filename = "data/"+id.replace('stocks_','')+'.csv';
