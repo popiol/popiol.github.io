@@ -28,6 +28,9 @@ function create_line_plot(id) {
 		$('#profit'+year).text(Math.round(data[data.length-1].val));
 		setTimeout(function(){
 			$('#bot_'+year).text(Math.round(data[data.length-1].val * 100) / 100 + '%');
+			val = parseFloat($('#bot_All').text().replace('%', '')) / 100 + 1;
+			val *= data[data.length-1].val / 100 + 1; 
+			$('#bot_All').text(Math.round((val - 1) * 10000) / 100 + '%');
 		}, 10);
 		$('#market'+year).text(Math.round(data[data.length-1].market_val));
 	}
@@ -40,13 +43,22 @@ $(function(){
 			table = $('<table class="table"></table>');
 			header = $('<tr></tr>');
 			for (key in data[0]) {
-				header.prepend($('<td></td>').text(key));
+				console.log(key);
+				if (key == 'All') {
+					header.append($('<td></td>').text(key));
+				} else {
+					header.prepend($('<td></td>').text(key));
+				}
 			}
 			table.append($('<thead></thead>').append(header));
 			tbody = $('<tbody></tbody>');
 			row = $('<tr></tr>');
 			for (key in data[0]) {
-				row.prepend($('<td id="bot_'+key+'"></td>'));
+				if (key == 'All') {
+					row.append($('<td id="bot_'+key+'" class="all">0.00%</td>'));
+				} else {
+					row.prepend($('<td id="bot_'+key+'"></td>'));
+				}
 			}
 			row.find('#bot_Name').text("BOT");
 			tbody.append(row);
@@ -54,7 +66,11 @@ $(function(){
 				if (rowi >= data.length-1) break;
 				row = $('<tr></tr>');
 				for (key in data[rowi]) {
-					row.prepend($('<td></td>').text(data[rowi][key]));
+					if (key == 'All') {
+						row.append($('<td class="all"></td>').text(data[rowi][key]));
+					} else {
+						row.prepend($('<td></td>').text(data[rowi][key]));
+					}
 				}
 				tbody.append(row);
 			}
