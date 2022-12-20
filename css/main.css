@@ -78,7 +78,7 @@ h2 {
 	background-color: #fcf3cf;
 }
 
-.table .all {
+.table tbody tr td.all {
 	font-weight: bold;
 }
 

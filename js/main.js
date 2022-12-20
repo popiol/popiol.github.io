@@ -31,7 +31,7 @@ function create_line_plot(id) {
 			val = parseFloat($('#bot_All').text().replace('%', '')) / 100 + 1;
 			val *= data[data.length-1].val / 100 + 1; 
 			$('#bot_All').text(Math.round((val - 1) * 10000) / 100 + '%');
-		}, 10);
+		}, 100);
 		$('#market'+year).text(Math.round(data[data.length-1].market_val));
 	}
 }
