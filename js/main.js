@@ -246,29 +246,6 @@ $(function(){
 						useSeriesColors: true,
 					},
 				},
-				/*chart: {
-					type: 'bar',
-					width: '98%',
-					height: 400,
-				},
-				colors: ['#FF4560','#008FFB'],
-				plotOptions: {
-					bar: {
-						horizontal: false,
-						columnWidth: '80%',
-						borderRadius: 5,
-					},
-				},
-				series: [{
-					name: '# bad trans',
-					data: [data[0].n]
-				},{
-					name: '# good trans',
-					data: [data[1].n]
-				}],
-				xaxis: {
-					categories: data.map(x => x.successful)
-				}*/
 			});
 			chart.render();
 
