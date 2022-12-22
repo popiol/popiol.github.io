@@ -1,3 +1,18 @@
+window.Apex = {
+	chart: {
+		foreColor: '#fff',
+		toolbar: {
+		  show: false
+		},
+	},
+	dataLabels: {
+		enabled: false
+	},
+	tooltip: {
+		theme: 'dark'
+	},
+};
+
 function create_line_plot(id) {
 	return function(data) {
 		var chart = new ApexCharts(document.querySelector("#"+id), {
@@ -43,9 +58,8 @@ $(function(){
 			table = $('<table class="table"></table>');
 			header = $('<tr></tr>');
 			for (key in data[0]) {
-				console.log(key);
 				if (key == 'All') {
-					header.append($('<td></td>').text(key));
+					header.append($('<td></td>').text('4 years'));
 				} else {
 					header.prepend($('<td></td>').text(key));
 				}
@@ -74,8 +88,6 @@ $(function(){
 				}
 				tbody.append(row);
 			}
-			w = $(window).width();
-			table.width(Math.min(w, 800));
 			$('#etfs').append(table.append(tbody));
 		}
 	);
@@ -108,7 +120,8 @@ $(function(){
 				plotOptions: {
 					bar: {
 						horizontal: true,
-						barHeight: '80%'
+						barHeight: '40%',
+						borderRadius: 5,
 					}
 				},
 				series: [{
@@ -116,10 +129,13 @@ $(function(){
 					data: data.map(x => x.profit)
 				}],
 				xaxis: {
-					categories: data.map(x => x.comp_name.replace('&amp;','&').split(',')[0])
+					categories: data.map(x => x.comp_name.replace('&amp;','&')),
+					labels: {
+						align: 'right'
+					}
 				},
 				yaxis: {
-					opposite: true
+					opposite: true,
 				},
 				dataLabels: {
 					formatter: x => '+'+x+'%',
@@ -127,6 +143,13 @@ $(function(){
 						colors: ['black']
 					},
 					textAnchor: 'start'
+				},
+				grid : {
+					yaxis: {
+						lines: {
+							show: false
+						}
+					},
 				}
 			});
 			best_worst_scale.best_chart = chart;
@@ -148,7 +171,8 @@ $(function(){
 				plotOptions: {
 					bar: {
 						horizontal: true,
-						barHeight: '80%'	
+						barHeight: '40%',
+						borderRadius: 5,
 					}
 				},
 				series: [{
@@ -164,7 +188,14 @@ $(function(){
 						colors: ['black']
 					},
 					textAnchor: 'middle'
-				}				
+				},
+				grid: {
+					yaxis: {
+						lines: {
+							show: false
+						}
+					},
+				},
 			});
 			best_worst_scale.worst_chart = chart;
 			best_worst_scale.rescale();
@@ -183,13 +214,9 @@ $(function(){
 				plotOptions: {
 					bar: {
 						horizontal: false,
-						columnWidth: '75%',
+						columnWidth: '80%',
+						borderRadius: 5,
 					},
-				},
-				stroke: {
-					show: true,
-					width: 50,
-					colors: ['transparent']
 				},
 				series: [{
 					name: '# bad trans',

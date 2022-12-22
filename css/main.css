@@ -1,20 +1,57 @@
-body {
-	font-family: Calibri;
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Regular.ttf')  format('truetype');
 }
 
-h1 {
-	background-color: #292961;
+@font-face {
+    font-family: 'OpenSans';
+	font-weight: bold;
+    src: url('../fonts/OpenSans-Bold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf')  format('truetype');
+}
+
+body {
+	font-family: Montserrat, sans-serif;
+	font-size: 10pt;
+	background-color: #505783;
 	color: white;
-	padding: 10px;
-	padding-left: 20px;
-	margin: 0;
-	font-size: 20px;
-	font-weight: normal;
+	background-image: url('../img/skyscrapers.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#container {
+	background-color: #323a46;
+	max-width: 1200px;
+	padding: 50px;
+	padding-top: 1px;
+	margin: auto;
+	border-radius: 10px;
+	opacity: 0.97;
 }
 
 h2 {
 	font-size: 30px;
-	color: #444444;
+	font-weight: bold;
+	color: #323a46;
+	max-width: 1250px;
+	margin: auto;
+	padding: 50px;
+	padding-left: 0px;
+}
+
+span.half {
+	display: inline-block;
+	width: 45%;
+	text-align: center;
+}
+
+.profit .val {
+	font-size: 20pt;
 }
 
 .stocks_line_vs_market {
@@ -28,29 +65,41 @@ h2 {
 }
 
 .box {
-	text-align: center;
+	text-align: left;
 	width: 25%;
 	min-width: 200px;
 	padding: 20px;
 	margin: 20px;
-	background-color: #e9f6f9;
+	background-color: #505783;
 	border-radius: 10px;
 	display: inline-block;
+	vertical-align: top;
+	font-size: 11pt;
+	line-height: 170%;
 }
 
 .box h3 {
 	margin-top: 0px;
+	padding-top: 0px;
+	font-weight: bold;
+}
+
+h3 {
+	font-weight: normal;
+	font-size: 14pt;
+	padding-top: 30px;
 }
 
 #stocks_best, #stocks_worst, #stocks_success {
 	width: 30%;
-	min-width: 380px;
+	/*min-width: 380px;*/
 	display: inline-block;
 }
 
 .table {
 	margin: auto;
 	border-collapse: collapse;
+	width: 100%;
 }
 
 .table thead {
@@ -68,6 +117,8 @@ h2 {
 .table tr td {
 	text-align: right;
 	padding: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .table tr td:first-child {
@@ -75,7 +126,7 @@ h2 {
 }
 
 .table tbody tr:first-child {
-	background-color: #fcf3cf;
+	background-color: #2a303a;
 }
 
 .table tbody tr td.all {

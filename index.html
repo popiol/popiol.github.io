@@ -6,47 +6,68 @@
 		<link rel="stylesheet" href="css/main.css">
 		<script src="https://d3js.org/d3.v5.min.js"></script>
 		<script src="js/jquery-3.4.1.min.js"></script>
-		<script src="js/apexcharts.js"></script>
+		<script src="js/apexcharts3.js"></script>
 		<script src="js/main.js"></script>
     </head>
     <body>
-        <h2>Stock market bot</h2>
-		<h3>Comparison with ETF's</h3>
-		<div id="etfs"></div>
-		<h3>2022, <span id="profit2022"></span>% profit vs <span id="market2022"></span>% market change</h3>
-		<div id="stocks_line_vs_market_2022" class="stocks_line_vs_market"></div>
-		<h3>2021, <span id="profit2021"></span>% profit vs <span id="market2021"></span>% market change</h3>
-		<div id="stocks_line_vs_market_2021" class="stocks_line_vs_market"></div>
-		<h3>2020, <span id="profit2020"></span>% profit vs <span id="market2020"></span>% market change</h3>
-		<div id="stocks_line_vs_market_2020" class="stocks_line_vs_market"></div>
-		<h3>2019, <span id="profit2019"></span>% profit vs <span id="market2019"></span>% market change</h3>
-		<div id="stocks_line_vs_market_2019" class="stocks_line_vs_market"></div>
-		<section id="stocks_info">
-			<div class="box">
-				<h3>Fully automated</h3>
-				<p>The project automates stock market anlysis, investment decisions and buy/sell orders.
-				It builds a model which identifies investment opportunities.
-				When all criteria are met, the script places a real transaction order in an online stock broker.
-				<br>&nbsp;</p>
-			</div>
-			<div class="box">
-				<h3>ETL and ML</h3>
-				<p>The system is consisted of multiple processes handling ETL, data analysis, monitoring, evaluation. 
-				It pulls current quotes, cleans the data and puts in a database. 
-				Generates a number of descriptors based on technical analysis. 
-				Rebuilds the descriptor tables to assure their completeness and correctness.
-				</p>
-			</div>
-			<div class="box">
-				<h3>Results</h3>
-				<p>The chart above shows the percent change in the capital and the market behavor in the same time period.
-				Below are some more stats, including best and worst transactions and number of successful and failed transactions.
-				The reports are automatically refreshed on daily basis.</p>
-			</div>
-		</section>
-		<div id="stocks_worst"></div>
-		<div id="stocks_best"></div>
-		<div id="stocks_success"></div>
+		<div id="header">
+	        <h2>Stock market bot</h2>
+		</div>
+		<div id="container">
+			<h3>Comparison with ETF's</h3>
+			<div id="etfs"></div>
+			<h3>2022</h3>
+			<p class="profit">
+			<span class="half"><span id="profit2022" class="val"></span><span class="val">%</span> <br />profit</span>
+			<span class="half"><span id="market2022" class="val"></span><span class="val">%</span> <br />market change</span>
+			</p>
+			<div id="stocks_line_vs_market_2022" class="stocks_line_vs_market"></div>
+			<h3>2021</h3>
+			<p class="profit">
+			<span class="half"><span id="profit2021" class="val"></span><span class="val">%</span> <br />profit</span>
+			<span class="half"><span id="market2021" class="val"></span><span class="val">%</span> <br />market change</span>
+			</p>
+			<div id="stocks_line_vs_market_2021" class="stocks_line_vs_market"></div>
+			<h3>2020</h3>
+			<p class="profit">
+			<span class="half"><span id="profit2020" class="val"></span><span class="val">%</span> <br />profit</span>
+			<span class="half"><span id="market2020" class="val"></span><span class="val">%</span> <br />market change</span>
+			</p>
+			<div id="stocks_line_vs_market_2020" class="stocks_line_vs_market"></div>
+			<h3>2019</h3>
+			<p class="profit">
+			<span class="half"><span id="profit2019" class="val"></span><span class="val">%</span> <br />profit</span>
+			<span class="half"><span id="market2019" class="val"></span><span class="val">%</span> <br />market change</span>
+			</p>
+			<div id="stocks_line_vs_market_2019" class="stocks_line_vs_market"></div>
+			<section id="stocks_info">
+				<div class="box">
+					<h3>Fully automated</h3>
+					<p>The project automates stock market anlysis, investment decisions and buy/sell orders.
+					It builds a model which identifies investment opportunities.
+					When all criteria are met, the script places a real transaction order in an online trading platform.
+					</p>
+				</div>
+				<div class="box">
+					<h3>MLOps</h3>
+					<p>The system is consisted of complex data pipelines, with processes such as downloading the data from multiple sources, 
+					web scrapping, anomaly detection,
+					quality assurence, feature generation, prediction, validation.
+					<br /><br />
+					</p>
+				</div>
+				<div class="box">
+					<h3>Simulation</h3>
+					<p>The model performance is first verified with a reliable investment simulation on over 20 years of historical data.
+					The model is frequently rebuilt to take the most current data into account. The final verification takes place
+					in real-life investment.
+					</p>
+				</div>
+			</section>
+			<div id="stocks_worst"></div>
+			<div id="stocks_best"></div>
+			<div id="stocks_success"></div>
+		</div>
     </body>
 </html>
 
