@@ -205,7 +205,48 @@ $(function(){
 	d3.csv("data/success.csv?r="+Math.random()).then(
 		function(data) {
 			var chart = new ApexCharts(document.querySelector("#stocks_success"), {
+				series: [data[0].n * 100 / Math.max(data[0].n, data[1].n), data[1].n * 100 / Math.max(data[0].n, data[1].n)],
 				chart: {
+					height: 400,
+					width: '98%',
+					type: 'radialBar',
+				},
+				colors: ['#FF4560', '#008FFB', '#323a46'],
+				plotOptions: {
+					radialBar: {
+						offsetY: 0,
+						startAngle: 0,
+						endAngle: 270,
+						hollow: {
+							margin: 5,
+							size: '60%',
+						},
+						track: {
+							background: '#323a46'
+						},
+						dataLabels: {
+							name: {
+								show: false,
+							},
+							value: {
+								show: false,
+							}
+						}
+					}
+				},
+				labels: ['# bad trans: ' + data[0].n, '# good trans: ' + data[1].n],
+				legend: {
+					fontSize: '16px',
+					show: true,
+					floating: true,
+					position: 'left',
+					offsetX: 0,
+					offsetY: 13,
+					labels: {
+						useSeriesColors: true,
+					},
+				},
+				/*chart: {
 					type: 'bar',
 					width: '98%',
 					height: 400,
@@ -227,7 +268,7 @@ $(function(){
 				}],
 				xaxis: {
 					categories: data.map(x => x.successful)
-				}
+				}*/
 			});
 			chart.render();
 
