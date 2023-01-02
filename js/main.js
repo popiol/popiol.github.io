@@ -59,7 +59,7 @@ $(function(){
 			header = $('<tr></tr>');
 			for (key in data[0]) {
 				if (key == 'All') {
-					header.append($('<td></td>').text('since 2019'));
+					header.append($('<td></td>').text('4 years'));
 				} else {
 					header.prepend($('<td></td>').text(key));
 				}
