@@ -40,8 +40,6 @@ function create_line_plot(id) {
 		});
 		chart.render();
 		var year = id.replace('stocks_line_vs_market_','');
-		console.log("id: " + id);
-		console.log("data: " + data);
 		$('#profit'+year).text(Math.round(data[data.length-1].val));
 		setTimeout(function(){
 			$('#bot_'+year).text(Math.round(data[data.length-1].val * 100) / 100 + '%');
@@ -61,7 +59,7 @@ $(function(){
 			header = $('<tr></tr>');
 			for (key in data[0]) {
 				if (key == 'All') {
-					header.append($('<td></td>').text('4 years'));
+					header.append($('<td></td>').text('since 2019'));
 				} else {
 					header.prepend($('<td></td>').text(key));
 				}
