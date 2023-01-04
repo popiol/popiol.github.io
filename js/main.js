@@ -41,12 +41,14 @@ function create_line_plot(id) {
 		chart.render();
 		var year = id.replace('stocks_line_vs_market_','');
 		$('#profit'+year).text(Math.round(data[data.length-1].val));
-		setTimeout(function(){
-			$('#bot_'+year).text(Math.round(data[data.length-1].val * 100) / 100 + '%');
-			val = parseFloat($('#bot_All').text().replace('%', '')) / 100 + 1;
-			val *= data[data.length-1].val / 100 + 1; 
-			$('#bot_All').text(Math.round((val - 1) * 10000) / 100 + '%');
-		}, 100);
+		if ($('#bot_'+year).length) {
+			setTimeout(function(){
+				$('#bot_'+year).text(Math.round(data[data.length-1].val * 100) / 100 + '%');
+				val = parseFloat($('#bot_All').text().replace('%', '')) / 100 + 1;
+				val *= data[data.length-1].val / 100 + 1; 
+				$('#bot_All').text(Math.round((val - 1) * 10000) / 100 + '%');
+			}, 100);
+		}
 		$('#market'+year).text(Math.round(data[data.length-1].market_val));
 	}
 }
