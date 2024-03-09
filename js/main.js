@@ -51,7 +51,7 @@ function create_line_plot(id) {
 				setTimeout(f, 100);
 			}
 		}
-		setTimeout(f, 200);
+		setTimeout(f, 300);
 		$('#market'+year).text(Math.round(data[data.length-1].market_val));
 	}
 }
