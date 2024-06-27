@@ -1,11 +1,11 @@
 comp_code,comp_name,profit
-WSE:WLT,"Wielton SA, 2023",-9.21
 NAS:HUM,"Humana Inc, 2024",-9.16
 NAS:WBA,"Walgreens Boots Alliance Inc, 2024",-6.79
-NAS:PCAR,"PACCAR Inc, 2023",-6.6
 NAS:SEDG,", 2024",-6.56
 NAS:ALB,"Albemarle Corporation, 2024",-6.08
-NAS:DY,"Dycom Industries, Inc., 2023",-6.01
 NAS:ILMN,"Illumina, Inc., 2024",-5.4
-NAS:BOH,"Bank of Hawaii Corporation, 2023",-3.97
 NAS:SEDG,", 2024",-3.62
+NAS:LUV,"Southwest Airlines Co, 2024",-2.76
+NAS:VFC,"VF Corp, 2024",4.26
+NAS:PENN,", 2024",9.07
+NAS:NYCB,"New York Community Bancorp, Inc., 2024",14.58
