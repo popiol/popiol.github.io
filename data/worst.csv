@@ -1,11 +1,11 @@
 comp_code,comp_name,profit
+NAS:SPWR,,-32.15
 NAS:HUM,"Humana Inc, 2024",-9.16
 NAS:WBA,"Walgreens Boots Alliance Inc, 2024",-6.79
 NAS:SEDG,", 2024",-6.56
 NAS:ALB,"Albemarle Corporation, 2024",-6.08
 NAS:ILMN,"Illumina, Inc., 2024",-5.4
+NAS:LUMN,,-5.11
 NAS:SEDG,", 2024",-3.62
+NAS:CNXC,,-3.11
 NAS:LUV,"Southwest Airlines Co, 2024",-2.76
-NAS:VFC,"VF Corp, 2024",4.26
-NAS:PENN,", 2024",9.07
-NAS:NYCB,"New York Community Bancorp, Inc., 2024",14.58
